@@ -1,0 +1,53 @@
+
+/* CSS PARA EL FOOTER */
+
+.footer {
+  position: relative;
+  width: 100%;
+  background: #25D0EB;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.social-icon {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.icon-elem {
+  margin: 0 10px;
+}
+
+.icon img {
+  width: 40px; /* Ajusta el tamaño según tus necesidades */
+  height: 40px; /* Ajusta el tamaño según tus necesidades */
+  object-fit: contain; /* Asegura que la imagen se ajuste dentro de las dimensiones */
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.menu-elem {
+  margin: 0 15px;
+}
+
+.menu-icon {
+  color: #0a0101;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.text {
+  color: #050303;
+}

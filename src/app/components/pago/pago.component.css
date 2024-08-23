@@ -1,0 +1,78 @@
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #e9f5fc;
+}
+
+body h1 {
+    text-align: center;
+    color: black;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding-bottom: 5%; /* Espacio adicional hacia abajo */
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    background-color: white; /* Fondo blanco para las tarjetas */
+    margin-bottom: 30px; /* Espacio inferior entre tarjetas */
+    transition: transform 0.3s, background-color 0.3s; /* Transición suave para el cambio de tamaño y color */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el cursor */
+    background-color: #f4f4f9; /* Cambia el color de fondo al pasar el cursor */
+}
+
+.card-header {
+    background-color: #25aacc;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content div {
+    margin-bottom: 10px;
+}
+
+.card-content .label {
+    font-weight: bold;
+}
+
+.card-footer {
+    font-style: italic;
+    text-align: center;
+}
+
+.separator {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+img {
+    width: 20%; /* Ancho de la imagen */
+    height: 25%; /* Altura de la imagen */
+    object-fit: scale-down; /* Ajusta la imagen para cubrir el contenedor */
+    border-radius: 5%; /* Bordes redondeados opcionales */
+}

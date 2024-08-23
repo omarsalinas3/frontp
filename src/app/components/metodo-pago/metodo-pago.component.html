@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configura tu tarjeta</title>
+    <link rel="stylesheet" href="metodo-pago.component.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Configura tu tarjeta de crédito o débito</h1>
+
+        <!-- Mostrar el ID del Hospital (eliminado para ocultar al usuario) -->
+        <!-- <div class="hospital-id">
+            <p>ID del Hospital: <strong>{{ tarjeta.idHospital }}</strong></p>
+        </div> -->
+
+        <form id="payment-form" novalidate (ngSubmit)="procesarPago()">
+            <div class="form-group">
+                <label for="numeroTarjeta">Número de tarjeta</label>
+                <input type="text" id="numeroTarjeta" placeholder="Número de tarjeta" pattern="\d{16}" title="Debe contener 16 dígitos" inputmode="numeric" maxlength="16" [(ngModel)]="tarjeta.numeroTarjeta" name="numeroTarjeta" required>
+                <div class="invalid-feedback" *ngIf="!validarTarjetaNumero">Por favor, ingresa un número de tarjeta válido (16 dígitos).</div>
+            </div>
+            <div class="form-group">
+                <div class="small-input">
+                    <label for="fechaExpiracion">Fecha de vencimiento</label>
+                    <input type="text" id="fechaExpiracion" placeholder="MM/AA" inputmode="numeric" maxlength="5" [(ngModel)]="tarjeta.fechaExpiracion" (input)="formatearFecha($event)" name="fechaExpiracion" required>
+                    <div class="invalid-feedback" *ngIf="!validarFecha">Por favor, ingresa una fecha de vencimiento válida (MM/AA) y el año debe ser mayor al actual.</div>
+                </div>
+                <div class="small-input">
+                    <label for="codigoSeguridad">CVV</label>
+                    <input type="text" id="codigoSeguridad" placeholder="CVV" pattern="\d{3}" title="Debe contener 3 dígitos" inputmode="numeric" maxlength="3" [(ngModel)]="tarjeta.codigoSeguridad" name="codigoSeguridad" required>
+                    <div class="invalid-feedback" *ngIf="!validarCvv">Por favor, ingresa un CVV válido (3 dígitos).</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nombreTitular">Nombre en la tarjeta</label>
+                <input type="text" id="nombreTitular" placeholder="Nombre en la tarjeta" [(ngModel)]="tarjeta.nombreTitular" name="nombreTitular" required>
+                <div class="invalid-feedback" *ngIf="!validarNombreTitular">Por favor, ingresa el nombre tal como aparece en la tarjeta.</div>
+            </div>
+            <div class="form-footer">
+                <button type="submit">Iniciar membresía</button>
+            </div>
+            <div class="terms">
+                Los pagos se procesarán internacionalmente. Es posible que se apliquen comisiones bancarias adicionales.<br><br>
+                Al hacer clic en el botón «Iniciar membresía», aceptas nuestros Términos de uso y nuestra Declaración de privacidad, y declaras que tienes más de 18 años. Asimismo, entiendes que continuaremos tu membresía de manera automática, y, hasta que la canceles, te facturaremos el cargo mensual a través de la forma de pago elegida. Puedes cancelar la membresía en cualquier momento para evitar cargos en el futuro.
+            </div>
+        </form>
+
+        <!-- Modal -->
+        <div id="message-modal" class="modal" [ngStyle]="{ 'display': modalVisible ? 'block' : 'none' }">
+            <div class="modal-content">
+                <span class="close" (click)="cerrarModal()">&times;</span>
+                <p>{{ mensaje }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

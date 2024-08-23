@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    /*background-image: url('https://static.vecteezy.com/system/resources/previews/006/654/688/non_2x/concept-blue-art-4k-background-texture-illustration-3d-render-free-photo.jpg'); /* Ruta a tu imagen */
+    background-color: #1867bb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    max-width: 400px;
+    padding: 60px;
+    border-radius: 10px;
+    background-color: #59b0f8; /* Fondo blanco para el contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #171717; /* Color azul suave para el título */
+    margin-bottom: 10px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.login-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #090404;
+    border-radius: 4px;
+}
+
+.error {
+    color: rgb(10, 10, 10);
+    margin-top: 5px;
+}
+
+.btn-login {
+    background-color: #007bff; /* Azul más intenso para el botón */
+    color: #d1d7de;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-login:disabled {
+    background-color: #0d0d0d;
+    cursor: not-allowed;
+}
+
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: #25D0EB;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .social-icon {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .icon-elem {
+    margin: 0 10px;
+  }
+  
+  .icon img {
+    width: 40px; /* Ajusta el tamaño según tus necesidades */
+    height: 40px; /* Ajusta el tamaño según tus necesidades */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro de las dimensiones */
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .menu-elem {
+    margin: 0 15px;
+  }
+  
+  .menu-icon {
+    color: #0a0101;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .text {
+    color: #050303;
+  }
+  
+  

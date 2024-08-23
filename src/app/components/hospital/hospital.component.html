@@ -1,0 +1,40 @@
+<h1>Formulario de Información del Hospital</h1>
+<form (ngSubmit)="procesarFormulario()">
+    <!-- Campos del formulario -->
+    <label for="nombreHospital">Nombre del Hospital:</label>
+    <input type="text" id="nombreHospital" [(ngModel)]="hospital.nombreHospital" name="nombreHospital" required />
+
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" [(ngModel)]="hospital.direccion" name="direccion" required />
+
+    <label for="estado">Estado:</label>
+    <input type="text" id="estado" [(ngModel)]="hospital.estado" name="estado" required />
+
+    <label for="municipio">Municipio:</label>
+    <input type="text" id="municipio" [(ngModel)]="hospital.municipio" name="municipio" required />
+
+    <label for="numSucursal">Número de Sucursal:</label>
+    <input type="text" id="numSucursal" [(ngModel)]="hospital.numSucursal" name="numSucursal" required />
+
+    <label for="telefono">Teléfono:</label>
+    <input type="text" id="telefono" [(ngModel)]="hospital.telefono" name="telefono" maxlength="10" pattern="\d{10}" title="El teléfono debe tener 10 dígitos" required />
+    <div *ngIf="telefonoInvalido" class="invalid-feedback">Por favor, ingrese un número de teléfono válido de 10 dígitos.</div>
+
+    <label for="nomRepresHospital">Nombre del Representante:</label>
+    <input type="text" id="nomRepresHospital" [(ngModel)]="hospital.nomRepresHospital" name="nomRepresHospital" required />
+
+    <label for="rfcHospital">RFC:</label>
+    <input type="text" id="rfcHospital" [(ngModel)]="hospital.rfcHospital" name="rfcHospital" maxlength="13" minlength="13" pattern=".{13}" title="El RFC debe tener exactamente 13 caracteres" required />
+
+    <input type="hidden" id="monto" [(ngModel)]="hospital.monto" name="monto" required />
+
+    <button type="submit">Registrar</button>
+</form>
+
+<div *ngIf="modalVisible" class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="cerrarModal()">&times;</span>
+        <p>{{mensaje}}</p>
+        <!-- Eliminado: <p *ngIf="hospital.idHospital">ID del Hospital: {{hospital.idHospital}}</p> -->
+    </div>
+</div>

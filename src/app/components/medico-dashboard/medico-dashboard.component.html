@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Citas</title>
+  <link rel="stylesheet" href="medico-dashboard.component.css">
+</head>
+<body>
+  <div class="dashboard">
+    <h2>Mis Citas</h2>
+    <div class="filtros">
+      <label for="fechaInicio">Desde:</label>
+      <input type="date" id="fechaInicio" [(ngModel)]="fechaInicio" name="fechaInicio">
+      
+      <label for="fechaFin">Hasta:</label>
+      <input type="date" id="fechaFin" [(ngModel)]="fechaFin" name="fechaFin">
+      
+      <button (click)="filtrarPorFechas()">Filtrar</button>
+    </div>
+
+    <ul class="citas">
+      <li *ngFor="let cita of citasFiltradas" [class.pendiente]="cita.estado === 'pendiente'" [class.confirmada]="cita.estado === 'confirmada'">
+        <p><strong>Fecha:</strong> {{cita.fechaFormateada}} - <strong>Hora:</strong> {{cita.horaFormateada}}</p>
+        <p><strong>Paciente:</strong> {{cita.nombreCompleto || 'No especificado'}}</p>
+        <p><strong>Edad:</strong> {{cita.edad}} - <strong>Género:</strong> {{cita.genero}} - <strong>Tipo de Sangre:</strong> {{cita.tipoSangre}}</p>
+        <p><strong>Estado:</strong> {{cita.estado}}</p>
+        <button *ngIf="cita.estado === 'pendiente'" (click)="confirmarCita(cita.idcita)">Confirmar</button>
+        <button *ngIf="cita.estado === 'confirmada'" (click)="seleccionarCita(cita)">Finalizar</button>
+        <button routerLink="/historial-medico" class="ver-historial-btn">Ver Mi Historial Médico</button>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="finalizar-cita" *ngIf="citaSeleccionada">
+    <h3>Finalizar Cita</h3>
+    <form (ngSubmit)="finalizarCita()">
+      <div>
+        <label for="diagnostico">Diagnóstico:</label>
+        <textarea id="diagnostico" [(ngModel)]="historialMedico.diagnostico" name="diagnostico" required></textarea>
+      </div>
+      <div>
+        <label for="tratamiento">Tratamiento:</label>
+        <textarea id="tratamiento" [(ngModel)]="historialMedico.tratamiento" name="tratamiento" required></textarea>
+      </div>
+      <div>
+        <label for="observaciones">Observaciones:</label>
+        <textarea id="observaciones" [(ngModel)]="historialMedico.observaciones" name="observaciones"></textarea>
+      </div>
+      <button type="submit">Finalizar y Guardar Historial</button>
+    </form>
+  </div>
+</body>
+</html>

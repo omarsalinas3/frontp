@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitales - Panel de Notificaciones</title>
+    <link rel="stylesheet" href="medico.component.css">
+</head>
+<body>
+    <div id="calendar">
+        <div id="calendar-header">
+            <button id="prev-month">◀</button>
+            <h2 id="month-year"></h2>
+            <button id="next-month">▶</button>
+        </div>
+        <div id="calendar-body">
+            <div id="days-of-week">
+                <div>Dom</div>
+                <div>Lun</div>
+                <div>Mar</div>
+                <div>Mié</div>
+                <div>Jue</div>
+                <div>Vie</div>
+                <div>Sáb</div>
+            </div>
+            <div id="calendar-dates"></div>
+        </div>
+    </div>
+    <script src="medico.component.ts"></script>
+    <div class="hospital-tab">
+        <div class="hospital">
+            <h3>Hospital 1</h3>
+            <div class="notification">3 nuevos pacientes</div>
+            <div class="patient-list">
+                <ul>
+                    <li>Nombre: Juan Pérez</li>
+                    <li>Edad: 45 años</li>
+                    <li>Diagnóstico: Neumonía</li>
+                </ul>
+                <ul>
+                    <li>Nombre: María García</li>
+                    <li>Edad: 30 años</li>
+                    <li>Diagnóstico: Fractura de brazo</li>
+                </ul>
+                <ul>
+                    <li>Nombre: Ana Martínez</li>
+                    <li>Edad: 55 años</li>
+                    <li>Diagnóstico: Infarto</li>
+                </ul>
+            </div>
+        </div>
+        <div class="hospital">
+            <h3>Hospital 2</h3>
+            <div class="notification">1 nuevo paciente</div>
+            <div class="patient-list">
+                <ul>
+                    <li>Nombre: Pedro López</li>
+                    <li>Edad: 28 años</li>
+                    <li>Diagnóstico: Apendicitis</li>
+                </ul>
+            </div>
+        </div>
+        <div class="hospital">
+            <h3>Hospital 3</h3>
+            <div class="notification">2 nuevos pacientes</div>
+            <div class="patient-list">
+                <ul>
+                    <li>Nombre: Sofía Rodríguez</li>
+                    <li>Edad: 35 años</li>
+                    <li>Diagnóstico: Diabetes</li>
+                </ul>
+                <ul>
+                    <li>Nombre: Jorge López</li>
+                    <li>Edad: 50 años</li>
+                    <li>Diagnóstico: Hipertensión</li>
+                </ul>
+            </div>
+        </div>
+        <div class="hospital">
+            <h3>Hospital 4</h3>
+            <div class="notification">4 nuevos pacientes</div>
+            <div class="patient-list">
+                <ul>
+                    <li>Nombre: Laura Ramírez</li>
+                    <li>Edad: 25 años</li>
+                    <li>Diagnóstico: Bronquitis</li>
+                </ul>
+                <ul>
+                    <li>Nombre: Carlos Gómez</li>
+                    <li>Edad: 40 años</li>
+                    <li>Diagnóstico: Colesterol alto</li>
+                </ul>
+                <ul>
+                    <li>Nombre: Marta Pérez</li>
+                    <li>Edad: 60 años</li>
+                    <li>Diagnóstico: Artritis</li>
+                </ul>
+                <ul>
+                    <li>Nombre: Andrés Díaz</li>
+                    <li>Edad: 22 años</li>
+                    <li>Diagnóstico: Gripe</li>
+                </ul>
+            </div>
+        </div>
+        <div class="hospital">
+            <h3>Hospital 5</h3>
+            <div class="notification">0 nuevos pacientes</div>
+            <div class="patient-list">
+                <p>No hay nuevos pacientes en este momento.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
